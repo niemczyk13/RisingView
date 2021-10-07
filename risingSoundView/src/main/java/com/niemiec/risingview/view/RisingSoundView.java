@@ -6,10 +6,13 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.button.MaterialButton;
 import com.niemiec.risingview.logic.RisingSoundViewLogic;
+import com.niemiec.risingview.model.RisingSound;
 
 import androidx.annotation.Nullable;
 
 public class RisingSoundView extends LinearLayout {
+    //TODO tutaj wchodzi RisingSound i wychodzi zmienione
+    private RisingSound risingSound;
     private RisingSoundViewLogic logic;
     private ViewBuilder viewBuilder;
     public RisingSoundView(Context context) {
@@ -34,5 +37,10 @@ public class RisingSoundView extends LinearLayout {
         for (MaterialButton button : viewBuilder.getButtons()) {
             addView(button);
         }
+    }
+
+    //TODO
+    public void initialize(RisingSound risingSound) {
+
     }
 }
