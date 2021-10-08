@@ -34,13 +34,19 @@ public class RisingSoundView extends LinearLayout {
         viewBuilder = new ViewBuilder(super.getContext());
 
         addView(viewBuilder.getTextView());
-        for (MaterialButton button : viewBuilder.getButtons()) {
+        for (MaterialButton button : viewBuilder.getRisingSoundViewButtons().getButtons()) {
             addView(button);
         }
+
+        createRisingSoundViewLogic(viewBuilder.getRisingSoundViewButtons());
+    }
+
+    private void createRisingSoundViewLogic(RisingSoundViewButtons buttons) {
+        logic = new RisingSoundViewLogic(buttons);
     }
 
     //TODO
     public void initialize(RisingSound risingSound) {
-
+        logic.initialize(risingSound);
     }
 }

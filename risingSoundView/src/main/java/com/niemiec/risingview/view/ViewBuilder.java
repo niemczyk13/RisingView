@@ -23,7 +23,7 @@ public class ViewBuilder {
         return risingSoundDescription;
     }
 
-    public MaterialButton[] getButtons() {
-        return buttons.getRisingValuesButtons();
+    public RisingSoundViewButtons getRisingSoundViewButtons() {
+        return buttons;
     }
 }

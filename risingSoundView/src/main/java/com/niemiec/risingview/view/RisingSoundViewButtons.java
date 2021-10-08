@@ -7,24 +7,36 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.google.android.material.button.MaterialButton;
+import com.niemiec.risingview.model.RisingSound;
 
 public class RisingSoundViewButtons {
     private Context context;
     private MaterialButton[] risingValuesButtons;
     private String[] buttonsNames;
+    private int[] buttonValues;
+    private int checkedButtonId;
 
     public RisingSoundViewButtons(Context context) {
         this.context = context;
         createRisingButtonNames();
         createButtons();
+        createButtonValues();
+    }
+
+    private void createButtonValues() {
+        buttonValues = new int[4];
+        buttonValues[RisingSoundValue.NONE.getButtonId()] = RisingSoundValue.NONE.getValue();
+        buttonValues[RisingSoundValue.FIRST.getButtonId()] = RisingSoundValue.FIRST.getValue();
+        buttonValues[RisingSoundValue.SECOND.getButtonId()] = RisingSoundValue.SECOND.getValue();
+        buttonValues[RisingSoundValue.THIRD.getButtonId()] = RisingSoundValue.THIRD.getValue();
     }
 
     private void createRisingButtonNames() {
         buttonsNames = new String[4];
-        buttonsNames[0] = "Brak";
-        buttonsNames[1] = "30s";
-        buttonsNames[2] = "60s";
-        buttonsNames[3] = "90s";
+        buttonsNames[RisingSoundValue.NONE.getButtonId()] = RisingSoundValue.NONE.getName();
+        buttonsNames[RisingSoundValue.FIRST.getButtonId()] = RisingSoundValue.FIRST.getName();
+        buttonsNames[RisingSoundValue.SECOND.getButtonId()] = RisingSoundValue.SECOND.getName();
+        buttonsNames[RisingSoundValue.THIRD.getButtonId()] = RisingSoundValue.THIRD.getName();
     }
 
     private void createButtons() {
@@ -80,6 +92,26 @@ public class RisingSoundViewButtons {
     }
 
     public MaterialButton[] getRisingValuesButtons() {
+        return risingValuesButtons;
+    }
+
+    public void setRisingSound(RisingSound risingSound) {
+        uncheckCheckedButton();
+
+        checkedButtonId = risingSound.getButtonId();
+        checkCheckedButton();
+
+    }
+
+    private void checkCheckedButton() {
+        risingValuesButtons[checkedButtonId].setChecked(true);
+    }
+
+    private void uncheckCheckedButton() {
+        risingValuesButtons[checkedButtonId].setChecked(false);
+    }
+
+    public MaterialButton[] getButtons() {
         return risingValuesButtons;
     }
 }

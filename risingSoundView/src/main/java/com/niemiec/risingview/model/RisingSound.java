@@ -3,6 +3,7 @@ package com.niemiec.risingview.model;
 public class RisingSound {
     private boolean isOn;
     private int time;
+    private int buttonId;
 
     public RisingSound(boolean isOn, int time) {
         this.isOn = isOn;
@@ -23,5 +24,13 @@ public class RisingSound {
 
     public void setTime(int time) {
         this.time = time;
+    }
+
+    public int getButtonId() {
+        return buttonId;
+    }
+
+    public void setButtonId(int buttonId) {
+        this.buttonId = buttonId;
     }
 }
