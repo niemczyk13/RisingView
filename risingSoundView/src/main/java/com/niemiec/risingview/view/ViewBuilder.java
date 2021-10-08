@@ -3,20 +3,17 @@ package com.niemiec.risingview.view;
 import android.content.Context;
 import android.widget.TextView;
 
-import com.google.android.material.button.MaterialButton;
+import com.niemiec.risingview.R;
 
 public class ViewBuilder {
-    private TextView risingSoundDescription;
-    private RisingSoundViewButtons buttons;
+    private final TextView risingSoundDescription;
+    private final RisingSoundViewButtons buttons;
 
 
     public ViewBuilder(Context context) {
         risingSoundDescription = new TextView(context);
-        risingSoundDescription.setText("Narastający dźwięk: ");
-
-
+        risingSoundDescription.setText(R.string.rising_sound_description);
         buttons = new RisingSoundViewButtons(context);
-
     }
 
     public TextView getTextView() {
