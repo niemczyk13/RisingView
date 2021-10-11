@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RisingSoundView">
+        <attr name="descriptionTextSize" format="dimension"/>
+        <attr name="buttonTextSize" format="dimension"/>
+        <attr name="buttonCheckBackgroundColor" format="color"/>
+        <attr name="buttonCheckTextColor" format="color"/>
+        <attr name="buttonUncheckBackgroundColor" format="color"/>
+        <attr name="buttonUncheckTextColor" format="color"/>
+    </declare-styleable>
+</resources>

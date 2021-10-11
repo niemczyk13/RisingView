@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.google.android.material.button.MaterialButton;
+import com.niemiec.risingview.view.style.RisingSoundViewAttributes;
 
 public class RisingSoundButton extends MaterialButton{
     private final int value;
@@ -25,6 +26,7 @@ public class RisingSoundButton extends MaterialButton{
 
     private void createMaterialButton(String name) {
         super.setText(name);
+        super.setTextSize(RisingSoundViewAttributes.getButtonTextSize());
         LinearLayout.LayoutParams params = getDefaultLayoutParamsForDayButton();
         super.setLayoutParams(params);
         super.setPadding(0, 0, 0, 0);
@@ -38,7 +40,7 @@ public class RisingSoundButton extends MaterialButton{
         final float scale = super.getContext().getResources().getDisplayMetrics().density;
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.weight = 2;
+        params.weight = 1;
         params.leftMargin = 1;
         params.rightMargin = 1;
         int dp = 55;
@@ -48,8 +50,8 @@ public class RisingSoundButton extends MaterialButton{
     }
 
     private void setUncheckColorButton() {
-        super.setBackgroundColor(Color.rgb(0, 0, 0));
-        super.setTextColor(Color.rgb(255, 255, 255));
+        super.setBackgroundColor(RisingSoundViewAttributes.getButtonUncheckBackgroundColor());
+        super.setTextColor(RisingSoundViewAttributes.getButtonUncheckTextColor());
     }
 
     private void setCheckColorButton() {

@@ -7,6 +7,9 @@
     tools:context=".MainActivity">
 
     <com.niemiec.risingview.view.RisingSoundView
+        app:descriptionTextSize="8dp"
+        app:buttonTextSize="5dp"
+        app:buttonUncheckBackgroundColor="@android:color/darker_gray"
         android:id="@+id/rising_sound_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
